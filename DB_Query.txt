@@ -1,0 +1,4 @@
+select avg(l.value) as avg_value, b.country, b.state, l.branch_id, l.is_active from loan l join branch b on l.branch_id = b.id where l.is_active
+= 1 group by l.branch_id ;
+(or)
+select avg(l.value) as avg_value,  l.branch_id from loan l join branch b on l.branch_id = b.id where l.is_active = 1 group by l.branch_id ;
